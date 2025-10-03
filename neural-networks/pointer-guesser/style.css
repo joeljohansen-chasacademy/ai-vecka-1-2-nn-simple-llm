@@ -1,0 +1,12 @@
+.wrap { max-width: 960px; margin: 24px auto; padding: 0 16px; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+body { margin:0; background:#f8f9fb; }
+.row { display:flex; gap:16px; flex-wrap:wrap; }
+.card { background:#fff; border-radius:14px; box-shadow:0 8px 30px rgba(0,0,0,0.05); padding:16px; flex:1; min-width:300px; }
+canvas { border-radius:12px; box-shadow:0 8px 24px rgba(0,0,0,0.08); background:#fff; }
+button, select { padding:8px 12px; border-radius:10px; border:1px solid #ddd; background:#fff; cursor:pointer; }
+button:hover { background:#f0f2f5; }
+.badge { display:inline-block; padding:2px 8px; border-radius:999px; background:#eef2ff; color:#3949ab; font-size:12px; margin-left:8px; }
+.muted { color:#666; font-size: 14px; }
+.mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace; }
+.grid { display:grid; grid-template-columns: repeat(2, minmax(180px, 1)); gap:8px; }
+.controls { margin-top:12px; display:flex; gap:8px; align-items:center; flex-wrap:wrap; }

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quadrant Classifier — ml5.js + p5.js</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- TensorFlow.js before ml5.js to avoid backend race conditions -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.20.0/dist/tf.min.js"></script>
+  <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Quadrant Classifier <span class="badge">ml5.js + p5.js</span></h1>
+    <p class="muted">Klicka i canvasen för att samla in data (UL/UR/LL/LR), träna modellen och låt den klassificera muspekarens position.</p>
+    <div class="row">
+      <div class="card" style="flex:2">
+        <div id="sketch"></div>
+        <div class="controls">
+          <label>Aktiv etikett:</label>
+          <select id="labelSelect">
+            <option value="UL">UL (upper-left)</option>
+            <option value="UR">UR (upper-right)</option>
+            <option value="LL">LL (lower-left)</option>
+            <option value="LR">LR (lower-right)</option>
+          </select>
+          <button id="trainBtn">Träna</button>
+          <button id="predictBtn">Starta/stoppa prediktion</button>
+          <span id="status" class="muted mono">status: init…</span>
+        </div>
+      </div>
+      <div class="card" style="flex:1">
+        <h3>Instruktion</h3>
+        <ol>
+          <li>Välj etikett (UL/UR/LL/LR).</li>
+          <li>Klicka i canvasen för att samla datapunkter.</li>
+          <li>Byt etikett och repetera för alla fyra hörn.</li>
+          <li>Klicka <b>Träna</b> → <b>Starta/stoppa prediktion</b>.</li>
+        </ol>
+        <p class="muted">Tips: Försök ha ungefär lika många punkter i varje hörn.</p>
+        <h3>Samples</h3>
+        <div class="grid">
+          <div>UL: <span id="ulCount">0</span></div>
+          <div>UR: <span id="urCount">0</span></div>
+          <div>LL: <span id="llCount">0</span></div>
+          <div>LR: <span id="lrCount">0</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="sketch.js"></script>
+</body>
+</html>
